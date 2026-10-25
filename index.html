@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰国香水椰青加工厂分级与质量反馈系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen">
+    <!-- 顶栏 Header -->
+    <header class="bg-teal-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold flex items-center gap-2">
+                    <span>🥥</span> 泰国香水椰青（Nam Hom）产地加工厂品质管理系统
+                </h1>
+                <p class="text-xs text-teal-100 mt-1">覆盖泰国产地 15 家合作加工厂 (7家中资厂 + 8家泰资厂) 全景动态评分与到港监控</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="scrollToSection('qc-form')" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-semibold text-sm px-4 py-2 rounded-lg shadow transition">
+                    + 录入到港柜质检反馈
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <!-- 分类切换 TAB -->
+        <div class="flex border-b border-slate-300 mb-6 bg-white rounded-t-xl shadow-sm overflow-hidden">
+            <button id="tab-thai" onclick="switchTab('thai')" class="flex-1 py-3.5 px-6 font-bold text-center border-b-2 border-teal-600 text-teal-700 bg-teal-50 transition">
+                🇹🇭 泰国老板工厂 (8家)
+            </button>
+            <button id="tab-china" onclick="switchTab('china')" class="flex-1 py-3.5 px-6 font-bold text-center border-b-2 border-transparent text-slate-500 hover:text-teal-600 transition">
+                🇨🇳 中国老板工厂 (7家)
+            </button>
+        </div>
+
+        <!-- 泰国老板工厂区域 -->
+        <div id="section-thai" class="block">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <!-- MOT -->
+                <div class="bg-white p-5 rounded-xl border-t-4 border-emerald-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold">MOT 工厂</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">S 级 (核心战略)</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">定位：主力保障与紧急调配基地</p>
+                    <div class="text-sm space-y-1 text-slate-700">
+                        <p>✅ <b>优势：</b> 合作最稳定，数量规格精准，弹性极高</p>
+                        <p>⚠️ <b>策略：</b> 保持深度绑定，优先分配高标订单</p>
+                    </div>
+                </div>
+
+                <!-- NB -->
+                <div class="bg-white p-5 rounded-xl border-t-4 border-blue-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold">NB 工厂</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800">A 级 (主力供货)</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">定位：主力常规订单承载厂</p>
+                    <div class="text-sm space-y-1 text-slate-700">
+                        <p>✅ <b>优势：</b> 团队成熟，产能稳定</p>
+                        <p>⚠️ <b>风险：</b> 刚装修复工，严防短装少件，需三方签字</p>
+                    </div>
+                </div>
+
+                <!-- KUMNUN -->
+                <div class="bg-white p-5 rounded-xl border-t-4 border-amber-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold">KUMNUN 工厂</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">B+ 级 (产地情报)</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">定位：产地风向标与通货支撑厂</p>
+                    <div class="text-sm space-y-1 text-slate-700">
+                        <p>✅ <b>优势：</b> <b>果源预判力强</b>，能预算当周果量多寡</p>
+                        <p>⚠️ <b>短板：</b> 规格无法精准定配，仅适合发通货单</p>
+                    </div>
+                </div>
+
+                <!-- NBS -->
+                <div class="bg-white p-5 rounded-xl border-t-4 border-indigo-500 shadow-sm hover:shadow-md transition">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold">NBS 工厂</h3>
+                        <span class="px-2.5 py
